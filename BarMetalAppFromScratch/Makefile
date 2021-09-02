@@ -15,9 +15,9 @@ CC = @arm-none-eabi-
 CFLAGS = -mcpu=arm926ej-s -g
 INCS = -I . 
 LIBS = 
-HAL = HAL/
+MCAL = Mcal/
 App = App/
-SRC = $(wildcard $(App)*.c $(HAL)*.c)  
+SRC = $(wildcard $(App)*.c $(MCAL)*.c)  
 OBJ = $(SRC:.c=.o)
 ###OBJS = $(patsubst %.c, %.o,$SCR)
 As = $(wildcard *.s)
@@ -47,7 +47,7 @@ $(project).bin : $(project).elf
 			 
 clean-all :
 			@echo "====== Everything Clean ======"
-			@rm -r *.o *.bin *.elf *.map $(HAL)*.o $(App)*.o
+			@rm -r *.o *.bin *.elf *.map $(MCAL)*.o $(App)*.o
 		    
 clean : 
 			@rm -r *.bin *.elf
